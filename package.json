@@ -1,0 +1,19 @@
+{
+  "name": "calc",
+  "version": "1.0.0",
+  "description": "js calculator app",
+  "main": "app.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DToakley/calculator.git"
+  },
+  "author": "dtoakley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DToakley/calculator/issues"
+  },
+  "homepage": "https://github.com/DToakley/calculator#readme"
+}
