@@ -3,6 +3,39 @@ $(document).ready(function() {
 	calcApp.calcAns();
 })
 
+
+var helpers = {
+    add: function(a, b) {
+        return	Number(a) + Number(b)
+    },
+    subtract: function(a, b) {
+        return Number(a) - Number(b);
+    },
+    multiply: function(a, b) {
+        return Number(a) * Number(b);
+    },
+    divide: function(a, b) {
+        return Number(a) / Number(b);
+    },
+    showNum: function(num) {
+        $('#answer').val(num);
+    },
+    addOperator: function(symbol) {
+        calcApp.sum.operators.push(symbol);
+    },
+    addValue: function(value) {
+        calcApp.sum.values.push(value);
+    },
+    resetSum: function() {
+        calcApp.sum.values = [];
+        calcApp.sum.operators = [];
+    },
+    clearAns: function() {
+        $('#answer').val('');
+    }
+}
+
+
 var calcApp = {
     sum: {
         'values': [],
@@ -36,7 +69,7 @@ var calcApp = {
                 helpers.showNum(val);
                 isFloat = true;
             }
-            // functionality if operator is pressed 
+            // functionality if operator is pressed
             if (val === 'x' || val === '-' || val === '+' || val === '÷') {
                 helpers.addOperator(val);
                 helpers.addValue(currVal);
@@ -63,7 +96,7 @@ var calcApp = {
             //Adds current value to values array
             helpers.addValue(currVal);
 
-            //sets answers to be firts value to start with. 
+            //sets answers to be firts value to start with.
             answer = values[0];
 
             //loops through values array and runs operator on current and next value
@@ -88,37 +121,6 @@ var calcApp = {
         });
     }
 };
-
-var helpers = {
-    add: function(a, b) {
-        return	Number(a) + Number(b)
-    },
-    subtract: function(a, b) {
-		return Number(a) - Number(b);
-	},
-    multiply: function(a, b) {
-		return Number(a) * Number(b);
-	},
-    divide: function(a, b) {
-		return Number(a) / Number(b);
-	},
-    showNum: function(num) {
-		$('#answer').val(num);
-	},
-    addOperator: function(symbol) {
-        calcApp.sum.operators.push(symbol);
-	},
-    addValue: function(value) {
-        calcApp.sum.values.push(value);
-	},
-    resetSum: function() {
-        calcApp.sum.values = [];
-        calcApp.sum.operators = [];
-	},
-    clearAns: function() {
-		$('#answer').val('');
-	}
-}
 
 
 
