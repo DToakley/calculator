@@ -1,8 +1,7 @@
 $(document).ready(function() {
 	calcApp.setSum();
 	calcApp.calcAns();
-})
-
+});
 
 var helpers = {
     add: function(a, b) {
@@ -33,8 +32,7 @@ var helpers = {
     clearAns: function() {
         $('#answer').val('');
     }
-}
-
+};
 
 var calcApp = {
     sum: {
@@ -46,7 +44,7 @@ var calcApp = {
         var preValIsOperator = false;
         var isFloat = false;
         $('button').click(function(e) {
-            e.preventDefault;
+            e.preventDefault();
             var val = $(this).text(),
                 currVal = $('#answer').val();
             //  checks if button is number
@@ -88,7 +86,7 @@ var calcApp = {
     },
     calcAns: function(){
         $('#equals').click(function(e) {
-            e.preventDefault;
+            e.preventDefault();
             var values = calcApp.sum.values;
             var operators = calcApp.sum.operators;
             var currVal = $('#answer').val();
@@ -96,11 +94,11 @@ var calcApp = {
             //Adds current value to values array
             helpers.addValue(currVal);
 
-            //sets answers to be firts value to start with.
-            answer = values[0];
+            //sets answers to be first value to start with.
+            var answer = values[0];
 
             //loops through values array and runs operator on current and next value
-            for (i = 0; i < values.length; i++) {
+            for (var i = 0; i < values.length; i++) {
                 if (operators[i] == '+') {
                     answer = helpers.add(answer, values[i+1]);
                 }
@@ -121,14 +119,3 @@ var calcApp = {
         });
     }
 };
-
-
-
-
-
-
-
-
-
-
-
