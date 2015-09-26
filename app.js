@@ -47,16 +47,16 @@ var calcApp = {
             e.preventDefault();
             var val = $(this).text(),
                 currVal = $('#answer').val();
-            //  checks if button is number
 
+            //  checks if button is number
             if (!isNaN(val)) {
                 //if previous button was operator, clear answer box and show new button pressed
                 if (preValIsOperator) {
                     helpers.clearAns();
                     helpers.showNum(val);
                 }
+                //Otherwise, add the button to the answer box
                 else {
-                    //Otherwise, add the button to the answer box
                     val = currVal + val;
                     helpers.showNum(val);
                 }
@@ -114,8 +114,6 @@ var calcApp = {
             }
             $('#answer').val(answer);
             helpers.resetSum();
-            console.log(values);
-            console.log(operators);
         });
     }
 };

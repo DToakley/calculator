@@ -6,11 +6,11 @@ describe('helpers', function() {
     it ('subtracts two numbers', function() {
         var subFunc = helpers.subtract(5,3);
         expect(subFunc).toEqual(2);
-    })
+    });
     it ('multiplies two numbers', function() {
         var mulFunc = helpers.multiply(5,3);
         expect(mulFunc).toEqual(15);
-    })
+    });
     it ('divides two numbers', function() {
         var divFunc = helpers.divide(5,4);
         expect(divFunc).toEqual(1.25);
